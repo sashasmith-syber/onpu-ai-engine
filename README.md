@@ -27,6 +27,7 @@ docker-compose up -d
 
 ```bash
 pip install -r requirements.txt
+export PYTHONPATH="./src:$PYTHONPATH"
 python -m uvicorn onpu_ai_engine.api:app --host 127.0.0.1 --port 8000
 ```
 

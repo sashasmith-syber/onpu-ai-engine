@@ -48,7 +48,8 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 
-# Run the engine
+# Set PYTHONPATH and run the engine
+export PYTHONPATH="./src:$PYTHONPATH"
 python -m uvicorn onpu_ai_engine.api:app --host 127.0.0.1 --port 8000
 ```
 
