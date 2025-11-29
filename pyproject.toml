@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "onpu-ai-engine"
+version = "0.1.0"
+description = "Persona-Driven AI prompt engine for text-music, sound design, and code-music generation"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Sasha Smith"}
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "openai>=1.0.0",
+    "langchain>=0.1.0",
+    "pydantic>=2.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.11.0",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "black>=23.0.0",
+    "flake8>=6.1.0",
+]
+
+[project.scripts]
+onpu = "onpu_ai_engine.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
