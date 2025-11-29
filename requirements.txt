@@ -1,0 +1,24 @@
+# ONPU AI Engine - Core Dependencies
+
+# AI/ML Libraries
+openai>=1.0.0
+langchain>=0.1.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# Audio Processing
+numpy>=1.24.0
+scipy>=1.11.0
+
+# API/Web
+fastapi>=0.104.0
+uvicorn>=0.24.0
+
+# Configuration
+python-dotenv>=1.0.0
+pyyaml>=6.0.0
+
+# Development
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.1.0

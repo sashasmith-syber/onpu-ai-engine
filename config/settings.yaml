@@ -1,0 +1,58 @@
+# ONPU AI Engine - Configuration Settings
+# Copy this file to settings.yaml and customize for your local deployment
+
+# Server Configuration
+server:
+  host: "127.0.0.1"
+  port: 8000
+  debug: false
+  reload: false
+
+# API Configuration
+api:
+  title: "ONPU AI Engine"
+  version: "0.1.0"
+  docs_enabled: true
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://127.0.0.1:3000"
+
+# Engine Configuration
+engine:
+  default_persona: "default"
+  max_prompt_length: 4096
+  timeout_seconds: 30
+
+# AI Provider Configuration (for future integration)
+ai_provider:
+  provider: "openai"  # Options: openai, local, custom
+  model: "gpt-4"
+  api_key_env: "OPENAI_API_KEY"
+  temperature: 0.7
+  max_tokens: 2048
+
+# Sound Design Configuration
+sound_design:
+  # [🔷 SOUNDBLUEPRINT™©] Settings
+  soundblueprint:
+    enabled: true
+    texture_depth: 3
+    harmonic_complexity: "medium"
+  
+  # [音符] Music Generation Settings
+  music_generation:
+    default_bpm: 120
+    default_key: "C"
+    default_scale: "major"
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: null  # Set to path for file logging
+
+# Local Deployment Settings
+local:
+  data_dir: "./data"
+  cache_enabled: true
+  cache_ttl_seconds: 3600
