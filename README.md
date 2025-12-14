@@ -41,6 +41,23 @@ See [QUICK_START.md](QUICK_START.md) for detailed setup instructions.
 
 ## Implementations
 
+### Python
+
+Complete Python implementation of ONPU AI:
+
+```python
+from src.python.onpu_ai import OnpuAI
+
+onpu = OnpuAI()
+response = onpu.process_input(
+    "How do I get warm analog sound in House Music?",
+    {'proficiency': 'intermediate'}
+)
+print(response)
+```
+
+See [src/python/README.md](src/python/README.md) for full documentation.
+
 ### JavaScript (Node.js/Browser)
 
 Complete JavaScript implementation of the ONPU AI Core:
@@ -57,10 +74,6 @@ console.log(response);
 ```
 
 See [src/javascript/README.md](src/javascript/README.md) for full documentation.
-
-### Python (Coming Soon)
-
-Python implementation following the architecture in [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## The ONPU Persona
 
