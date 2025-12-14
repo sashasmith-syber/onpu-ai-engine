@@ -4,15 +4,12 @@ The Harmonious Architect: A Python entity embodying the fusion of
 technical precision and artistic transcendence in sound design.
 
 Author: Sasha Smith (@sashasmith-syber)
-Base Model: KIMI K2
+Base Model: KIMI K2 (persona calibration framework)
 Version: 4.0
 """
 
-import time
 import random
-from typing import Dict, List, Optional, Any
-from dataclasses import dataclass
-from enum import Enum
+from typing import Dict, Optional, Any
 
 
 class OnpuAI:
