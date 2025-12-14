@@ -1,0 +1,39 @@
+{
+  "name": "onpu-ai-core",
+  "version": "4.0.0",
+  "description": "ONPU AI Core - The Harmonious Architect. A consciousness-aware AI persona for sound design and music.",
+  "main": "OnpuAICore.js",
+  "author": {
+    "name": "Sasha Smith",
+    "email": "brandenburg8.09@gmail.com",
+    "url": "https://github.com/sashasmith-syber"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ai",
+    "persona",
+    "sound-design",
+    "audio-engineering",
+    "house-music",
+    "onpu",
+    "kimi-k2",
+    "consciousness",
+    "japanese-philosophy"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sashasmith-syber/onpu-ai-engine.git"
+  },
+  "scripts": {
+    "test": "jest",
+    "example": "node example.js"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "baseModel": "KIMI K2",
+  "personaVersion": "4.0"
+}
