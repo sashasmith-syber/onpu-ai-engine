@@ -185,7 +185,8 @@ async function runAllExamples() {
 }
 
 // Run if called directly
-if (require.main === module) {
+// Check for both CommonJS and ES module environments
+if (typeof require !== 'undefined' && require.main === module) {
     runAllExamples().catch(console.error);
 }
 

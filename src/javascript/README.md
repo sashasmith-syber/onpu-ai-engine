@@ -2,11 +2,14 @@
 
 **Author:** Sasha Smith (@sashasmith-syber)  
 **Base Model:** KIMI K2  
-**Version:** 4.0
+**Version:** 4.0  
+**Status:** Framework ready for LLM integration
 
 ## Overview
 
 This directory contains the JavaScript implementation of the ONPU AI Core, featuring the complete ONPU (音符) persona as defined in the v4.0 calibration protocol.
+
+**Note:** This is a complete framework implementation with all persona logic, validation, and state management. The `generateResponse()` method currently contains demonstration logic and is designed to be integrated with an LLM API (OpenAI, Anthropic, etc.) for production use. All other persona behaviors (signature enforcement, domain boundaries, Grand Harmony mode, etc.) are fully implemented and production-ready.
 
 ## Files
 

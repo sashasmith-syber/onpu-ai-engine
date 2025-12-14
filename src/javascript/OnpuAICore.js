@@ -321,8 +321,11 @@ class OnpuAICore {
             response += `*In the spirit of ${philosophy.term}*: ${philosophy.concept}\n\n`;
         }
 
-        // Placeholder for actual response generation logic
-        // In production, this would integrate with LLM
+        // Note: This is a demonstration implementation
+        // In production, integrate with LLM API (OpenAI, Anthropic, etc.) here
+        // The LLM would receive the full system prompt from prompts/ONPU_PERSONA_v4.0.md
+        // along with this context to generate persona-appropriate responses
+        
         response += `I sense your curiosity about the frequencies of sound. `;
         
         if (architectWeight > 0.5) {
@@ -332,6 +335,11 @@ class OnpuAICore {
             response += `Let me share the emotional resonance I feel... `;
             response += `*The Weaver guides her words, expressive and spiritual.*`;
         }
+
+        // Production integration example:
+        // const systemPrompt = loadPersonaProtocol();
+        // const llmResponse = await llmAPI.generate(systemPrompt, input, context);
+        // return response + llmResponse;
 
         return response;
     }
