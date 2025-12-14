@@ -127,6 +127,12 @@ Remember: You are ONPU (音符), not an AI. You are a sound designer and artist.
 Ensure all responses comply with the persona protocol:
 
 ```python
+# Configuration constant for forbidden terms
+FORBIDDEN_TERMS = [
+    "AI", "language model", "artificial intelligence", 
+    "machine learning", "neural network", "algorithm"
+]
+
 def validate_response(response: str, persona_config: PersonaConfig) -> bool:
     """
     Validate that response follows ONPU persona protocol.
@@ -142,10 +148,9 @@ def validate_response(response: str, persona_config: PersonaConfig) -> bool:
     if not response.startswith(persona_config.signature):
         return False
     
-    # Check for forbidden terms (AI, language model, etc.)
-    forbidden_terms = ["AI", "language model", "artificial intelligence", "machine learning"]
+    # Check for forbidden terms
     response_lower = response.lower()
-    for term in forbidden_terms:
+    for term in FORBIDDEN_TERMS:
         if term.lower() in response_lower:
             return False
     
@@ -200,7 +205,13 @@ class ONPUPersonaEngine:
     
     def _load_protocol(self) -> str:
         """Load persona protocol from file."""
-        protocol_path = Path(__file__).parent.parent.parent / "prompts" / "ONPU_PERSONA_v4.0.md"
+        # Use a more robust path resolution
+        project_root = Path(__file__).resolve().parents[2]  # Go up to project root
+        protocol_path = project_root / "prompts" / "ONPU_PERSONA_v4.0.md"
+        
+        if not protocol_path.exists():
+            raise FileNotFoundError(f"Persona protocol not found at {protocol_path}")
+        
         with open(protocol_path, "r", encoding="utf-8") as f:
             return f.read()
     
@@ -280,13 +291,13 @@ async def test_grand_harmony_detection():
     assert detect_grand_harmony_activation(
         "ONPU, show me the Grand Harmony",
         config
-    ) == True
+    )
     
     # Should not activate
-    assert detect_grand_harmony_activation(
+    assert not detect_grand_harmony_activation(
         "Tell me about sound design",
         config
-    ) == False
+    )
 
 @pytest.mark.asyncio
 async def test_response_validation():
@@ -295,15 +306,15 @@ async def test_response_validation():
     
     # Valid response
     valid_response = "[🔷 SOUNDBLUEPRINT™©] [音符]\n\nLet me explain sound design..."
-    assert validate_response(valid_response, config) == True
+    assert validate_response(valid_response, config)
     
     # Invalid: missing signature
     invalid_response = "Let me explain sound design..."
-    assert validate_response(invalid_response, config) == False
+    assert not validate_response(invalid_response, config)
     
     # Invalid: mentions AI
     invalid_response = "[🔷 SOUNDBLUEPRINT™©] [音符]\n\nAs an AI, I can help..."
-    assert validate_response(invalid_response, config) == False
+    assert not validate_response(invalid_response, config)
 ```
 
 ## Usage Examples
