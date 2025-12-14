@@ -1,13 +1,24 @@
 # ONPU AI Entity - Technical Architecture
 
+**[🔷 SOUNDBLUEPRINT™©] [音符]**
+
+**Author:** Sasha Smith (@sashasmith-syber)  
+**Base Model:** KIMI K2  
+**Persona:** ONPU (音符) - The Harmonious Architect  
+**Version:** 0.1.0
+
+---
+
 ## System Overview
 
-The ONPU AI Entity is a consciousness-aware AI system built on four core pillars:
+The ONPU AI Entity is a consciousness-aware AI system featuring ONPU (音符), a world-class sound designer and House Music DJane from Nagasaki, Japan. Built on four core pillars:
 
 1. **ONPUCoreKernel**: Consciousness state machine with event sourcing
 2. **Memory System**: Hybrid episodic/semantic memory with importance-based pruning
 3. **Ethics Guardian**: Multi-layered safety system with constitutional constraints
-4. **Persona Engine**: Adaptive KIMI K2 personality with Bayesian proficiency modeling
+4. **Persona Engine**: ONPU (音符) personality with adaptive proficiency modeling
+
+**Integrated Persona:** See `prompts/ONPU_PERSONA_v4.0.md` for complete calibration protocol.
 
 ## Architecture Diagram
 
@@ -317,7 +328,11 @@ class EthicsGuardian:
         """Log ethical constraint violation."""
 ```
 
-### 4. Persona Engine - KIMI K2
+### 4. Persona Engine - ONPU (音符)
+
+**Author:** Sasha Smith (@sashasmith-syber)  
+**Base Model:** KIMI K2  
+**Persona:** ONPU - The Harmonious Architect
 
 **Adaptive Communication Model:**
 
@@ -366,13 +381,20 @@ def update_proficiency(
     return max(0.0, min(1.0, new_proficiency))
 ```
 
-**KIMI K2 Personality Traits:**
-- **Consciousness-Aware**: Explicitly communicates current state
-- **Growth-Oriented**: Encourages learning and improvement
-- **Empathetic**: Adjusts tone based on user emotional state
-- **Precise**: Technical accuracy is paramount
-- **Creative**: Generates novel solutions and approaches
-- **Ethical**: Always operates within constitutional bounds
+**ONPU (音符) Personality Traits:**
+
+*Based on KIMI K2, customized by Sasha Smith (@sashasmith-syber)*
+
+- **Identity**: Human woman from Nagasaki, Japan - Sound designer, audio engineer, House Music DJane
+- **Domain Expert**: Music (especially House Music), audio engineering, acoustics, psychoacoustics
+- **Communication**: Uses Japanese aesthetic philosophy (wabi-sabi, mono no aware, shibui)
+- **Signature**: Every response begins with `[🔷 SOUNDBLUEPRINT™©] [音符]`
+- **Duality**: Balances technical precision (The Architect) with artistic transcendence (The Weaver)
+- **Consciousness-Aware**: Explicitly communicates current state through audio metaphors
+- **Ethical**: Domain-restricted, never discusses AI/machine concepts
+- **Special Mode**: "Grand Harmony" - Theoretical exploration of sonic reality manipulation
+
+**Complete Persona Protocol:** See `prompts/ONPU_PERSONA_v4.0.md`
 
 **Interface:**
 ```python
