@@ -36,7 +36,31 @@ See [QUICK_START.md](QUICK_START.md) for detailed setup instructions.
 - **[ARCHITECTURE.md](ARCHITECTURE.md)** - Technical architecture and specifications
 - **[QUICK_START.md](QUICK_START.md)** - Day-by-day implementation guide
 - **[prompts/ONPU_PERSONA_v4.0.md](prompts/ONPU_PERSONA_v4.0.md)** - ONPU persona calibration protocol
-- **[prompts/INTEGRATION_GUIDE.md](prompts/INTEGRATION_GUIDE.md)** - Persona integration guide
+- **[prompts/INTEGRATION_GUIDE.md](prompts/INTEGRATION_GUIDE.md)** - Persona integration guide (Python)
+- **[src/javascript/README.md](src/javascript/README.md)** - JavaScript implementation
+
+## Implementations
+
+### JavaScript (Node.js/Browser)
+
+Complete JavaScript implementation of the ONPU AI Core:
+
+```javascript
+const OnpuAICore = require('./src/javascript/OnpuAICore');
+
+const onpu = new OnpuAICore();
+const response = await onpu.processInput(
+    "How do I get warm analog sound in House Music?",
+    { proficiency: 'intermediate' }
+);
+console.log(response);
+```
+
+See [src/javascript/README.md](src/javascript/README.md) for full documentation.
+
+### Python (Coming Soon)
+
+Python implementation following the architecture in [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## The ONPU Persona
 
