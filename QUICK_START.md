@@ -69,6 +69,7 @@ black>=23.0.0
 isort>=5.12.0
 mypy>=1.7.0
 ruff>=0.1.0
+pre-commit>=3.5.0
 ```
 
 **Create `.env.example`:**
@@ -203,8 +204,7 @@ repos:
 # Install dependencies
 pip install -r requirements.txt
 
-# Install pre-commit hooks
-pip install pre-commit
+# Install pre-commit hooks (already included in requirements.txt)
 pre-commit install
 ```
 
@@ -677,8 +677,13 @@ pytest
 ### Step 2: Start the Application
 
 ```bash
-# Start the server
-uvicorn src.main:app --reload
+# Start the server (run from project root)
+# Using python -m ensures proper module resolution
+python -m uvicorn src.main:app --reload
+
+# Alternative: Set PYTHONPATH
+# export PYTHONPATH=/home/runner/work/onpu-ai-engine/onpu-ai-engine:$PYTHONPATH
+# uvicorn src.main:app --reload
 
 # Should see:
 # INFO:     Uvicorn running on http://127.0.0.1:8000

@@ -348,7 +348,10 @@ def update_proficiency(
     learning_rate: float = 0.1
 ) -> float:
     """
-    Bayesian-inspired proficiency update.
+    Adaptive proficiency update using prediction error.
+    
+    Note: Full Bayesian updating with prior/posterior distributions
+    can be implemented in Phase 2 for more sophisticated modeling.
     
     If user succeeds at difficult task → increase proficiency
     If user struggles at easy task → decrease proficiency
@@ -356,7 +359,7 @@ def update_proficiency(
     expected_success = current_proficiency * task_difficulty
     prediction_error = user_response_quality - expected_success
     
-    # Update with learning rate
+    # Update with learning rate (gradient-based)
     new_proficiency = current_proficiency + (learning_rate * prediction_error)
     
     # Clamp to [0.0, 1.0]
@@ -605,8 +608,10 @@ L3: Database (persistent)
 | Response time (p95) | >1s | >2s |
 | Error rate | >0.5% | >1% |
 | Memory usage | >75% | >90% |
-| Ethics violations | 1 per hour | 1 per 10 min |
+| Ethics violations | 1 violation | Any violation |
 | State transition latency | >20ms | >50ms |
+
+**Note**: Ethics violations should be treated with zero tolerance. Any violation triggers immediate investigation and potential system halt depending on severity.
 
 ## Future Enhancements (Post Phase 1)
 
