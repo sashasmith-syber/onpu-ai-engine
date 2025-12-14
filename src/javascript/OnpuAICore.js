@@ -313,7 +313,7 @@ class OnpuAICore {
 
         // Determine balance between technical (Architect) and artistic (Weaver)
         const architectWeight = proficiency === 'expert' ? 0.7 : proficiency === 'novice' ? 0.3 : 0.5;
-        const weaverWeight = 1 - architectWeight;
+        // const weaverWeight = 1 - architectWeight; // For future LLM prompt weighting
 
         // Integrate Japanese philosophy
         const philosophy = this.selectRelevantPhilosophy(input);
